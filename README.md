@@ -8,6 +8,9 @@
 * you can import a .csv file into excel, libreoffice calc, or any other sheet processor
 * Errors/bugs found will be fixed upon discovering  them
 
+### updates
+* forgot to include the total number of players per event, it has been added.
+
 
 ### step 1
 
@@ -28,7 +31,7 @@ Copy and paste this code in the console and press enter/run (it will take someti
 
 After everything is loaded/open copy and paste this code:
     
-    let content = '"date","description","location","points","pro points","multiplier","players","format","store","round number","result","opponent"\r\n';
+       let content = '"date","description","store","points","pro points","multiplier","total event players","format","place","store","round number","result","opponent"\r\n';
     document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
       //console.log(content);
       const date = row.querySelector('.Date').innerText.trim() || "";
@@ -41,14 +44,14 @@ After everything is loaded/open copy and paste this code:
       const eventFormat = row.querySelector('.EventFormat') ? row.querySelector('.EventFormat').innerText.trim() : "";
       const eventLocation = row.querySelector('.EventLocation') ? row.querySelector('.EventLocation').innerText.trim() : "";
       const place = row.querySelector('.EventPlace') ? row.querySelector('.EventPlace').innerText.trim() : "";
-    	row.querySelectorAll('.MatchHistoryTable .MatchHistoryRow').forEach(match=>{
+      row.querySelectorAll('.MatchHistoryTable .MatchHistoryRow').forEach(match=>{
         const roundNumber = match.querySelector('.MatchPlace') ? match.querySelector('.MatchPlace').innerText.trim() : "";
         const result = match.querySelector('.MatchResult') ? match.querySelector('.MatchResult').innerText.trim() : "";
         const opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim() : "";
-        content += `"${date}","${description}","${location}","${lifetimepoints}","${propoints}","${multiplier}","${eventFormat}","${eventLocation}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
+        content += `"${date}","${description}","${location}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${eventLocation}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
       });
     });
-    
+
     let link = document.createElement('a')
     link.id = 'download-csv'
     link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -63,7 +66,7 @@ ___
 
 and after everything is loaded:
 
-       var  content='"date","description","location","points","pro points","multiplier","players","format","store","round number","result","opponent"\r\n';document.querySelectorAll(".HistoryPanelRow").forEach(function(e){var  t=e.querySelector(".Date").innerText.trim()||"",r=e.querySelector(".Description").innerText.trim()||"",n=e.querySelector(".Location").innerText.trim()||"",o=e.querySelector(".LifetimePoints").innerText.trim()||"",c=e.querySelector(".ProPoints").innerText.trim()||"",l=e.querySelector(".EventMultiplier")?e.querySelector(".EventMultiplier").innerText.trim():"",i=(e.querySelector(".EventPlayers")&&e.querySelector(".EventPlayers").innerText.trim(),e.querySelector(".EventFormat")?e.querySelector(".EventFormat").innerText.trim():""),a=e.querySelector(".EventLocation")?e.querySelector(".EventLocation").innerText.trim():"",u=e.querySelector(".EventPlace")?e.querySelector(".EventPlace").innerText.trim():"";e.querySelectorAll(".MatchHistoryTable .MatchHistoryRow").forEach(function(e){var  y=e.querySelector(".MatchPlace")?e.querySelector(".MatchPlace").innerText.trim():"",s=e.querySelector(".MatchResult")?e.querySelector(".MatchResult").innerText.trim():"",m=e.querySelector(".MatchOpponent")?e.querySelector(".MatchOpponent").innerText.trim():"";content+='"'.concat(t,'","').concat(r,'","').concat(n,'","').concat(o,'","').concat(c,'","').concat(l,'","').concat(i,'","').concat(a,'","').concat(u,'","').concat(y,'","').concat(s,'","').concat(m,'"\r\n')})});var  link=document.createElement("a");link.id="download-csv",link.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(content)),link.setAttribute("download","pwp.export.csv"),document.body.appendChild(link),document.querySelector("#download-csv").click();
+       var content='"date","description","store","points","pro points","multiplier","total event players","format","place","store","round number","result","opponent"\r\n';document.querySelectorAll(".HistoryPanelRow").forEach(function(e){var t=e.querySelector(".Date").innerText.trim()||"",r=e.querySelector(".Description").innerText.trim()||"",n=e.querySelector(".Location").innerText.trim()||"",c=e.querySelector(".LifetimePoints").innerText.trim()||"",o=e.querySelector(".ProPoints").innerText.trim()||"",i=e.querySelector(".EventMultiplier")?e.querySelector(".EventMultiplier").innerText.trim():"",l=e.querySelector(".EventPlayers")?e.querySelector(".EventPlayers").innerText.trim():"",a=e.querySelector(".EventFormat")?e.querySelector(".EventFormat").innerText.trim():"",u=e.querySelector(".EventLocation")?e.querySelector(".EventLocation").innerText.trim():"",y=e.querySelector(".EventPlace")?e.querySelector(".EventPlace").innerText.trim():"";e.querySelectorAll(".MatchHistoryTable .MatchHistoryRow").forEach(function(e){var m=e.querySelector(".MatchPlace")?e.querySelector(".MatchPlace").innerText.trim():"",s=e.querySelector(".MatchResult")?e.querySelector(".MatchResult").innerText.trim():"",q=e.querySelector(".MatchOpponent")?e.querySelector(".MatchOpponent").innerText.trim():"";content+='"'.concat(t,'","').concat(r,'","').concat(n,'","').concat(c,'","').concat(o,'","').concat(i,'","').concat(l,'","').concat(a,'","').concat(u,'","').concat(y,'","').concat(m,'","').concat(s,'","').concat(q,'"\r\n')})});var link=document.createElement("a");link.id="download-csv",link.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(content)),link.setAttribute("download","pwp.export.csv"),document.body.appendChild(link),document.querySelector("#download-csv").click();
 ___
 
 ### step 4
