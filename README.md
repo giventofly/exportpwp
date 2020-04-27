@@ -82,6 +82,6 @@ Import to your favorite spreasheet processor and do whatever you want with it :)
 ____
 
 #### shamefull plug
-If you made this far and like stats, you can go visit [mtgmeta.io](https://mtgmeta.io)
+If you made this far and like stats, you can go visit [mtgmeta.io](https://mtgmeta.io) or follow me [@twitter](https://twitter.com/mtgmetaio)
 
 
