@@ -10,6 +10,7 @@
 
 ### updates
 * forgot to include the total number of players per event, it has been added.
+* column order fixed, and removed repeated store info
 
 
 ### step 1
