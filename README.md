@@ -14,7 +14,7 @@
 
 ### step 1
 
-Open [https://www.wizards.com/Magic/PlaneswalkerPoints/History](laneswalkerPoints/History) after you are logged in in the pwp website.
+Open [https://www.wizards.com/Magic/PlaneswalkerPoints/History](https://www.wizards.com/Magic/PlaneswalkerPoints/History) after you are logged in in the pwp website.
 
 ### step 2
 
