@@ -11,6 +11,10 @@
 ### updates
 * forgot to include the total number of players per event, it has been added.
 * column order fixed, and removed repeated store info
+* 28, April 2020
+* fixed error on the table header
+* fixed names that contained " in them
+* team opponents should be correctly tracked now
 
 
 ### step 1
