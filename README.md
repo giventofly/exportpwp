@@ -25,20 +25,25 @@ Open your browser tools and go to console (F12)
 
 Copy and paste this code in the console and press enter/run (it will take sometime loading all the events):
 
-    document.querySelectorAll('a.Expand').forEach(a=>{
-      a.focus();
-      a.click();
-    });
+```javascript
+document.querySelectorAll('a.Expand').forEach(a=>{
+  a.focus();
+  a.click();
+});
+```
 
 if you also have teamevents please do this after and wait until it finishes:
 
-    document.querySelectorAll('.MatchOpponentTeamExpand a').forEach(a=>{
-       a.focus();
-       a.click();
-    });
+```javascript
+document.querySelectorAll('.MatchOpponentTeamExpand a').forEach(a=>{
+   a.focus();
+   a.click();
+});
+```
 
 After everything is loaded/open copy and paste this code:
- ```
+
+```javascript
 let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
