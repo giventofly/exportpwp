@@ -8,24 +8,11 @@ while offering no exporting feature. This means that at that date, *ALL your mat
 The procedure below will allow you to export your match history in a `.csv` file. That file can then be imported
 into your sheet processor of choice (Microsoft Excel, Libreoffice Calc, or other).
 
-Go to the [export procedure](#steps).
-
-## Changelog
-
-### 2020-04-29
-* Removed unnecessary text (eg. Format: Standard to Standard)
-
-### 2020-04-28
-* fixed error on the table header
-* fixed names that contained " in them
-* team opponents should be correctly tracked now
-
-### 2020-04-27
-* added the total number of players per event
-* column order fixed, and removed repeated store info
+- [Export Procedure](#export-procedure)
+- [Changelog](#changelog)
+- [Credits](#credits)
 
 ## Export Procedure
-<a id="steps"></a>
 ### step 1
 
 Open [https://www.wizards.com/Magic/PlaneswalkerPoints/History](https://www.wizards.com/Magic/PlaneswalkerPoints/History) after you are logged in in the pwp website.
@@ -98,9 +85,22 @@ A .csv file with all the info should be downloading (might take sometime accordi
 
 Import to your favorite spreadsheet processor and do whatever you want with it :)
 
-____
+## Changelog
 
-#### shamefull plug
-If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio) 
+### 2020-04-29
+* Removed unnecessary text (eg. Format: Standard to Standard)
+
+### 2020-04-28
+* fixed error on the table header
+* fixed names that contained " in them
+* team opponents should be correctly tracked now
+
+### 2020-04-27
+* added the total number of players per event
+* column order fixed, and removed repeated store info
+
+## Credits
+
+If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
 
 
