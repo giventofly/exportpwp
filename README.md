@@ -71,6 +71,6 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 ## Credits
 
 * If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
-* Special thanks to [libreforce](https://github.com/liberforce) for helping with the readme formatation and bug/features hunt!
+* Special thanks to [liberforce](https://github.com/liberforce) for helping with the readme formatting and bug/features hunt!
 
 
