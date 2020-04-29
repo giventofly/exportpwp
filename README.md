@@ -50,7 +50,6 @@ After everything is loaded/open copy and paste this code:
        let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
-  //console.log(content);
   const date = row.querySelector('.Date').innerText.trim() || "";
   const description = row.querySelector('.Description').innerText.trim().replace(/(")/gm,'\"') || "";
   const location = row.querySelector('.Location').innerText.replace(/(")/gm,'\"').trim() || "";
@@ -64,13 +63,15 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   row.querySelectorAll('.MatchHistoryTable .MatchHistoryRow').forEach(match=>{
     const roundNumber = match.querySelector('.MatchPlace') ? match.querySelector('.MatchPlace').innerText.trim() : "";
     const result = match.querySelector('.MatchResult') ? match.querySelector('.MatchResult').innerText.trim() : "";
-    let opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'\"') : "";
+    let opp = ''; 
     if(match.querySelector('.MatchOpponentTeam')){
-      opp += ' ';
       match.querySelectorAll('.MatchOpponentTeam div').forEach(teamopp=>{
         opp += teamopp.innerText.trim().replace(/(")/gm,'\"') + ', ';
       });
     } 
+    else {
+      opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'\"') : "";
+    }
     content += `"${date}","${description}","${location}","${eventLocation}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
   });
 
@@ -84,23 +85,6 @@ link.setAttribute('download', 'pwp.export.csv');
 document.body.appendChild(link)
 document.querySelector('#download-csv').click();
 ```
-___
-**If you have an older browser <safari10, <2017 use this minified and transpilled code**:
-
-    document.querySelectorAll("a.Expand").forEach(function(e){e.focus(),e.click()});
-    
-    
- next step if you have team events :
-    
-    document.querySelectorAll(".MatchOpponentTeamExpand a").forEach(function(e){e.focus(),e.click()});
-
-    
-and after everything is loaded:
-
-```      
- var  content='"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';document.querySelectorAll(".HistoryPanelRow").forEach(function(e){var  t=e.querySelector(".Date").innerText.trim()||"",r=e.querySelector(".Description").innerText.trim().replace(/(")/gm,'"')||"",c=e.querySelector(".Location").innerText.replace(/(")/gm,'"').trim()||"",n=e.querySelector(".LifetimePoints").innerText.trim()||"",o=e.querySelector(".ProPoints").innerText.trim()||"",l=e.querySelector(".EventMultiplier")?e.querySelector(".EventMultiplier").innerText.replace(/(Event Multiplier:)/gm,"").trim():"",a=e.querySelector(".EventPlayers")?e.querySelector(".EventPlayers").innerText.replace(/(Players:)/gm,"").trim():"",i=e.querySelector(".EventFormat")?e.querySelector(".EventFormat").innerText.replace(/(Format:)/gm,"").trim():"",u=e.querySelector(".EventLocation")?e.querySelector(".EventLocation").innerText.replace(/(Location:)/gm,"").replace(/(")/gm,'"').trim():"",m=e.querySelector(".EventPlace")?e.querySelector(".EventPlace").innerText.replace(/(Place:)/gm,"").trim():"";e.querySelectorAll(".MatchHistoryTable .MatchHistoryRow").forEach(function(e){var  p=e.querySelector(".MatchPlace")?e.querySelector(".MatchPlace").innerText.trim():"",y=e.querySelector(".MatchResult")?e.querySelector(".MatchResult").innerText.trim():"",q=e.querySelector(".MatchOpponent")?e.querySelector(".MatchOpponent").innerText.trim().replace(/(")/gm,'"'):"";e.querySelector(".MatchOpponentTeam")&&(q+=" ",e.querySelectorAll(".MatchOpponentTeam div").forEach(function(e){q+=e.innerText.trim().replace(/(")/gm,'"')+", "})),content+='"'.concat(t,'","').concat(r,'","').concat(c,'","').concat(u,'","').concat(n,'","').concat(o,'","').concat(l,'","').concat(a,'","').concat(i,'","').concat(m,'","').concat(p,'","').concat(y,'","').concat(q,'"\r\n')})});var  link=document.createElement("a");link.id="download-csv",link.setAttribute("href","data:text/plain;charset=utf-8,"+encodeURIComponent(content)),link.setAttribute("download","pwp.export.csv"),document.body.appendChild(link),document.querySelector("#download-csv").click();
- ```
-___
 
 ### step 4
 
