@@ -13,15 +13,15 @@ into your sheet processor of choice (Microsoft Excel, Libreoffice Calc, or other
 - [Credits](#credits)
 
 ## Export Procedure
-### step 1
+### Step 1
 
 Open [https://www.wizards.com/Magic/PlaneswalkerPoints/History](https://www.wizards.com/Magic/PlaneswalkerPoints/History) after you are logged in in the pwp website.
 
-### step 2
+### Step 2
 
 Open your browser tools and go to console (F12)
 
-### step 3
+### Step 3
 
 Copy and paste this code in the console and press enter/run (it will take sometime loading all the events):
 
@@ -45,11 +45,11 @@ After everything is loaded/open, copy and paste the code from this file:
 
 - [exportpwp.js](exportpwp.js)
 
-### step 4
+### Step 4
 
 A .csv file with all the info should be downloading (might take sometime according to your browser/processor).
 
-### step 5
+### Step 5
 
 Import to your favorite spreadsheet processor and do whatever you want with it :)
 
