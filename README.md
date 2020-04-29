@@ -68,6 +68,7 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
       match.querySelectorAll('.MatchOpponentTeam div').forEach(teamopp=>{
         opp += teamopp.innerText.trim().replace(/(")/gm,'\"') + ', ';
       });
+      opp = opp.slice(0, -2);
     } 
     else {
       opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'\"') : "";
