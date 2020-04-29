@@ -57,6 +57,7 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 
 ### 2020-04-29
 * Removed unnecessary text (eg. Format: Standard to Standard)
+* Fixed names that contained " in them (again) for proper import in LibreOffice Calc
 
 ### 2020-04-28
 * fixed error on the table header

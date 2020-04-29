@@ -2,14 +2,14 @@ let content = '"date","description","store","location","points","pro points","mu
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
-  const description = row.querySelector('.Description').innerText.trim().replace(/(")/gm,'\"') || "";
-  const location = row.querySelector('.Location').innerText.replace(/(")/gm,'\"').trim() || "";
+  const description = row.querySelector('.Description').innerText.trim().replace(/(")/gm,'""') || "";
+  const location = row.querySelector('.Location').innerText.replace(/(")/gm,'""').trim() || "";
   const lifetimepoints = row.querySelector('.LifetimePoints').innerText.trim() || "";
   const propoints = row.querySelector('.ProPoints').innerText.trim() || "";
   const multiplier = row.querySelector('.EventMultiplier') ? row.querySelector('.EventMultiplier').innerText.replace(/(Event Multiplier:)/gm,'').trim() : "";
   const totalPlayers = row.querySelector('.EventPlayers') ? row.querySelector('.EventPlayers').innerText.replace(/(Players:)/gm,"").trim() : "";
   const eventFormat = row.querySelector('.EventFormat') ? row.querySelector('.EventFormat').innerText.replace(/(Format:)/gm,"").trim() : "";
-  const eventLocation = row.querySelector('.EventLocation') ? row.querySelector('.EventLocation').innerText.replace(/(Location:)/gm,'').replace(/(")/gm,'\"').trim() : "";
+  const eventLocation = row.querySelector('.EventLocation') ? row.querySelector('.EventLocation').innerText.replace(/(Location:)/gm,'').replace(/(")/gm,'""').trim() : "";
   const place = row.querySelector('.EventPlace') ? row.querySelector('.EventPlace').innerText.replace(/(Place:)/gm,'').trim() : "";
   row.querySelectorAll('.MatchHistoryTable .MatchHistoryRow').forEach(match=>{
     const roundNumber = match.querySelector('.MatchPlace') ? match.querySelector('.MatchPlace').innerText.trim() : "";
@@ -17,12 +17,12 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
     let opp = '';
     if(match.querySelector('.MatchOpponentTeam')){
       match.querySelectorAll('.MatchOpponentTeam div').forEach(teamopp=>{
-        opp += teamopp.innerText.trim().replace(/(")/gm,'\"') + ', ';
+        opp += teamopp.innerText.trim().replace(/(")/gm,'""') + ', ';
       });
       opp = opp.slice(0, -2);
     }
     else {
-      opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'\"') : "";
+      opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'""') : "";
     }
     content += `"${date}","${description}","${location}","${eventLocation}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
   });
