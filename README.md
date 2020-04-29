@@ -1,29 +1,34 @@
 
 # Planeswalker points Exporter
 
-[go to steps](#steps)
+Wizards of the Coast [announced](https://magic.gg/news/sunsetting-planeswalker-points) that they will close the
+[Planeswalker Points website](https://magic.gg/news/sunsetting-planeswalker-points) 2020, May 27th,
+while offering no exporting feature. This means that at that date, *ALL your match history will be deleted*.
 
-#### smallnotes
+The procedure below will allow you to export your match history in a `.csv` file. That file can then be imported
+into your sheet processor of choice (Microsoft Excel, Libreoffice Calc, or other).
 
-* [wizards](https://magic.gg/news/sunsetting-planeswalker-points) announced that they will erase ALL your match history.
-* you can import a .csv file into excel, libreoffice calc, or any other sheet processor
+Go to the [export procedure](#steps).
 
-#### updates
-* forgot to include the total number of players per event, it has been added.
-* column order fixed, and removed repeated store info
-* 28, April 2020
+## Changelog
+
+### 2020-04-29
+* Removed unnecessary text (eg. Format: Standard to Standard)
+
+### 2020-04-28
 * fixed error on the table header
 * fixed names that contained " in them
 * team opponents should be correctly tracked now
-* 29 April 2020
-* Removed unnecessary text (eg. Format: Standard to Standard)
 
-# Steps
+### 2020-04-27
+* added the total number of players per event
+* column order fixed, and removed repeated store info
+
+## Export Procedure
 <a id="steps"></a>
 ### step 1
 
 Open [https://www.wizards.com/Magic/PlaneswalkerPoints/History](https://www.wizards.com/Magic/PlaneswalkerPoints/History) after you are logged in in the pwp website.
-
 
 ### step 2
 
