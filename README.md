@@ -18,7 +18,7 @@
 * 29 April 2020
 * Removed unnecessary text (eg. Format: Standard to Standard)
 
-# Steps 
+# Steps
 <a id="steps"></a>
 ### step 1
 
@@ -39,15 +39,15 @@ Copy and paste this code in the console and press enter/run (it will take someti
     });
 
 if you also have teamevents please do this after and wait until it finishes:
-    
+
     document.querySelectorAll('.MatchOpponentTeamExpand a').forEach(a=>{
        a.focus();
        a.click();
     });
 
 After everything is loaded/open copy and paste this code:
- ```  
-       let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
+ ```
+let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
@@ -63,20 +63,18 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   row.querySelectorAll('.MatchHistoryTable .MatchHistoryRow').forEach(match=>{
     const roundNumber = match.querySelector('.MatchPlace') ? match.querySelector('.MatchPlace').innerText.trim() : "";
     const result = match.querySelector('.MatchResult') ? match.querySelector('.MatchResult').innerText.trim() : "";
-    let opp = ''; 
+    let opp = '';
     if(match.querySelector('.MatchOpponentTeam')){
       match.querySelectorAll('.MatchOpponentTeam div').forEach(teamopp=>{
         opp += teamopp.innerText.trim().replace(/(")/gm,'\"') + ', ';
       });
       opp = opp.slice(0, -2);
-    } 
+    }
     else {
       opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'\"') : "";
     }
     content += `"${date}","${description}","${location}","${eventLocation}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
   });
-
-
 });
 
 let link = document.createElement('a')
@@ -94,8 +92,6 @@ A .csv file with all the info should be downloading (might take sometime accordi
 ### step 5
 
 Import to your favorite spreadsheet processor and do whatever you want with it :)
-
-
 
 ____
 
