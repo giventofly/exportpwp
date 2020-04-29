@@ -43,7 +43,7 @@ document.querySelectorAll('.MatchOpponentTeamExpand a').forEach(a=>{
 
 After everything is loaded/open, copy and paste the code from this file:
 
-- [exportpwp.js](exportpwp.js)
+- [exportpwp.js](exportpwp.js) use the raw option to copy the code or [direct raw exportpwp.js](https://raw.githubusercontent.com/giventofly/exportpwp/master/exportpwp.js)
 
 ### Step 4
 
@@ -69,6 +69,7 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 
 ## Credits
 
-If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
+* If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
+* Special thanks to [libreforce](https://github.com/liberforce) for helping with the readme formatation and bug/features hunt!
 
 
