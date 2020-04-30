@@ -1,4 +1,15 @@
-let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
+
+
+const checkEverythingIsLoaded = setInterval(isLoaded, 5000);
+const totalEventsToLoad = document.querySelectorAll('a.Expand').length;
+
+document.querySelectorAll('a.Expand').forEach(a=>{
+  a.focus();
+  a.click();
+});
+
+function saveCSV(){
+  let content = '"date","description","store","location","participation poins","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
@@ -6,6 +17,7 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const location = row.querySelector('.Location').innerText.replace(/(")/gm,'""').trim() || "";
   const lifetimepoints = row.querySelector('.LifetimePoints').innerText.trim() || "";
   const propoints = row.querySelector('.ProPoints').innerText.trim() || "";
+  const participationpoints = row.querySelector('.EventParticipationPoints') ? row.querySelector('.EventParticipationPoints').innerText.replace(row.querySelector('.EventParticipationPoints b').innerText,'').trim() : "";
   const multiplier = row.querySelector('.EventMultiplier') ? row.querySelector('.EventMultiplier').innerText.replace(row.querySelector('.EventMultiplier b').innerText,'').trim() : "";
   const totalPlayers = row.querySelector('.EventPlayers') ? row.querySelector('.EventPlayers').innerText.replace(row.querySelector('.EventPlayers b').innerText,"").trim() : "";
   const eventFormat = row.querySelector('.EventFormat') ? row.querySelector('.EventFormat').innerText.replace(row.querySelector('.EventFormat b').innerText,"").trim() : "";
@@ -24,7 +36,7 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
     else {
       opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'""') : "";
     }
-    content += `"${date}","${description}","${location}","${eventLocation}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
+    content += `"${date}","${description}","${location}","${eventLocation}","${participationpoints}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
   });
 });
 
@@ -35,3 +47,12 @@ link.setAttribute('download', 'pwp.export.csv');
 document.body.appendChild(link)
 document.querySelector('#download-csv').click();
 
+
+}
+
+function isLoaded(){
+  if(document.querySelectorAll('a.Expand').length == 0 && document.querySelectorAll('.EventSummary').length == totalEventsToLoad){
+    clearInterval(checkEverythingIsLoaded);
+    saveCSV();
+  }
+}
