@@ -9,7 +9,7 @@ document.querySelectorAll('a.Expand').forEach(a=>{
 });
 
 function saveCSV(){
-  let content = '"date","description","store","location","participation poins","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
+  let content = '"date","description","store","location","participation points","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
