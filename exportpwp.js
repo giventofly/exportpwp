@@ -1,4 +1,15 @@
-let content = '"date","description","store","location","participation poins","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
+
+
+const checkEverythingIsLoaded = setInterval(isLoaded, 5000);
+const totalEventsToLoad = document.querySelectorAll('a.Expand').length;
+
+document.querySelectorAll('a.Expand').forEach(a=>{
+  a.focus();
+  a.click();
+});
+
+function saveCSV(){
+  let content = '"date","description","store","location","participation poins","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
@@ -36,3 +47,12 @@ link.setAttribute('download', 'pwp.export.csv');
 document.body.appendChild(link)
 document.querySelector('#download-csv').click();
 
+
+}
+
+function isLoaded(){
+  if(document.querySelectorAll('a.Expand').length == 0 && document.querySelectorAll('.EventSummary').length == totalEventsToLoad){
+    clearInterval(checkEverythingIsLoaded);
+    saveCSV();
+  }
+}
