@@ -58,6 +58,7 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 ### 2020-04-30
 * Internationalization removal of extra fields: e.g. "Format: Standard" to "Standard"
 * Fixed escaping double quotes correctly when they appeared
+* Participation points added
 
 ### 2020-04-29
 * Removed unnecessary text (eg. Format: Standard to Standard)
@@ -75,7 +76,7 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 ## Credits
 
 * If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
-*  Thanks to [zendamacf](https://github.com/zendamacf) and [liberforce](https://github.com/liberforce) for helping with the readme formatting, bug/features and code improvements!
+*  Thanks to [zendamacf](https://github.com/zendamacf) and [liberforce](https://github.com/liberforce) for helping with the readme formatting, bug hunting, features and code improvements!
 
 
 
