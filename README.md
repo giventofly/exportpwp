@@ -55,6 +55,10 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 
 ## Changelog
 
+### 2020-04-30
+* Internationalization removal of extra fields: e.g. "Format: Standard" to "Standard"
+* Fixed escaping double quotes correctly when they appeared
+
 ### 2020-04-29
 * Removed unnecessary text (eg. Format: Standard to Standard)
 * Fixed names that contained " in them (again) for proper import in LibreOffice Calc
@@ -71,6 +75,7 @@ Import to your favorite spreadsheet processor and do whatever you want with it :
 ## Credits
 
 * If you made this far and like stats, you can go visit my other project [mtgmeta.io](https://mtgmeta.io) or follow mtgmeta on twitter [@mtgmetaio](https://twitter.com/mtgmetaio)
-* Special thanks to [liberforce](https://github.com/liberforce) for helping with the readme formatting and bug/features hunt!
+*  Thanks to [zendamacf](https://github.com/zendamacf) and [liberforce](https://github.com/liberforce) for helping with the readme formatting, bug/features and code improvements!
+
 
 
