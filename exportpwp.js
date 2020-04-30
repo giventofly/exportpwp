@@ -1,4 +1,4 @@
-let content = '"date","description","store","location","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
+let content = '"date","description","store","location","participation poins","points","pro points","multiplier","total event players","format","place","round number","result","opponent"\r\n';
 
 document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const date = row.querySelector('.Date').innerText.trim() || "";
@@ -6,6 +6,7 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
   const location = row.querySelector('.Location').innerText.replace(/(")/gm,'""').trim() || "";
   const lifetimepoints = row.querySelector('.LifetimePoints').innerText.trim() || "";
   const propoints = row.querySelector('.ProPoints').innerText.trim() || "";
+  const participationpoints = row.querySelector('.EventParticipationPoints') ? row.querySelector('.EventParticipationPoints').innerText.replace(row.querySelector('.EventParticipationPoints b').innerText,'').trim() : "";
   const multiplier = row.querySelector('.EventMultiplier') ? row.querySelector('.EventMultiplier').innerText.replace(row.querySelector('.EventMultiplier b').innerText,'').trim() : "";
   const totalPlayers = row.querySelector('.EventPlayers') ? row.querySelector('.EventPlayers').innerText.replace(row.querySelector('.EventPlayers b').innerText,"").trim() : "";
   const eventFormat = row.querySelector('.EventFormat') ? row.querySelector('.EventFormat').innerText.replace(row.querySelector('.EventFormat b').innerText,"").trim() : "";
@@ -24,7 +25,7 @@ document.querySelectorAll('.HistoryPanelRow').forEach(row=>{
     else {
       opp = match.querySelector('.MatchOpponent') ? match.querySelector('.MatchOpponent').innerText.trim().replace(/(")/gm,'""') : "";
     }
-    content += `"${date}","${description}","${location}","${eventLocation}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
+    content += `"${date}","${description}","${location}","${eventLocation}","${participationpoints}","${lifetimepoints}","${propoints}","${multiplier}","${totalPlayers}","${eventFormat}","${place}","${roundNumber}","${result}","${opp}"\r\n`;
   });
 });
 
