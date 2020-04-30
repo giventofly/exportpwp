@@ -94,7 +94,7 @@ function isLoaded(){
 </details>
 
 
-And just until until the `.csv` file is downloaded (might take sometime according to your browser/processor/connection).
+And just wait until the `.csv` file is downloaded (might take sometime according to your browser/processor/connection).
 
 ### Step 4
 
